@@ -52,6 +52,7 @@ class LoginScreen extends Component {
         }).then(result => {
 
         }).catch(error => {
+            debugger;
             const errorMessage =  error.graphQLErrors[0].message;
             this.props.changeLoginScreenField({variables: {
                 fieldName: 'error',

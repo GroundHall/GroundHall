@@ -52,12 +52,12 @@ export default StyleSheet.create({
         alignItems: 'center'
     },
     orWrap: {
-        fontSize: 20,
+        fontSize: 18,
         color: 'grey',
         fontFamily: 'Lato-Regular'
     },
     registerText: {
-        fontSize: 22,
+        fontSize: 20,
         color: colors.secondary.medium,
         marginTop: 20,
         fontFamily: 'Lato-Bold',
