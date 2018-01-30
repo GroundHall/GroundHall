@@ -14,6 +14,11 @@
 		"apollo-link-state": "^0.3.0",
 		"babel-core": "6.0.0",
 		"babel-plugin-transform-object-rest-spread": "^6.26.0",
+		"eslint": "^4.16.0",
+		"eslint-config-airbnb": "^16.1.0",
+		"eslint-plugin-import": "^2.8.0",
+		"eslint-plugin-jsx-a11y": "^6.0.3",
+		"eslint-plugin-react": "^7.6.0",
 		"graphql": "0.11.3",
 		"graphql-tag": "^2.6.0",
 		"react": "16.0.0",
@@ -22,7 +27,9 @@
 		"react-native-material-ripple": "^0.7.5",
 		"react-native-material-textfield": "^0.10.3",
 		"react-native-nativebutton": "^0.1.5",
-		"react-native-vector-icons": "^4.4.2"
+		"react-native-svg": "^6.0.1-rc.1",
+		"react-native-vector-icons": "^4.4.2",
+		"react-navigation": "^1.0.0-beta.26"
 	},
 	"devDependencies": {
 		"babel-jest": "21.2.0",
