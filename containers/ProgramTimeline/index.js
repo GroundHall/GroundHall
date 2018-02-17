@@ -1,45 +1,76 @@
 import React, { Component } from 'react';
-import Svg, { Line, Circle } from 'react-native-svg';
-import { View, Text } from 'react-native';
-import colors from '../../colors';
-import styles from './styles.css';
+import PropTypes from 'prop-types';
+import Svg, { Line } from 'react-native-svg';
+import { View, ActivityIndicator } from 'react-native';
+import gql from 'graphql-tag';
+import { graphql, compose } from 'react-apollo';
 
+import Period from './Period';
+import Lesson from './Lesson';
 import ActivityCircle from './ActivityCircle';
 
-const lineProps = {
-  x1: '30',
-  y1: '0',
-  x2: '30',
-  y2: '400',
-  stroke: colors.secondary.medium,
-  strokeWidth: '2',
+import styles from './styles.css';
+
+const propTypes = {
+  lessons: PropTypes.arrayOf(PropTypes.shape({
+    day: PropTypes.string,
+    index: PropTypes.number,
+    time_start: PropTypes.string,
+    time_end: PropTypes.string,
+    subject: PropTypes.shape({
+      name: PropTypes.string
+    }),
+  })),
+  programTimeline: PropTypes.shape({
+    svgProps: PropTypes.shape({
+      width: PropTypes.number,
+      height: PropTypes.number
+    }),
+    lineProps: PropTypes.shape({
+      x1: PropTypes.number,
+      y1: PropTypes.number,
+      x2: PropTypes.number,
+      y2: PropTypes.number,
+      stroke: PropTypes.string,
+      strokeWidth: PropTypes.number,
+    }),
+    circleProps: PropTypes.shape({
+      cx: PropTypes.number,
+      cy: PropTypes.number,
+      delta: PropTypes.number,
+    })
+  }),
+  loading: PropTypes.bool.isRequired,
+  changeSVGHeight: PropTypes.func.isRequired
 };
 
-const STARTING_X_CIRCLE_POSITION = 30;
+const defaultProps = {
+  lessons: [],
+  programTimeline: {}
+};
 
 class ProgramTimeline extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      svgHeight: 400,
-      deltaOfCirclePoints: null
+  get horizontalMarginStyle() {
+    return {
+      marginVertical: this.props.programTimeline.circleProps.delta / 2
     };
   }
 
-
   renderTimeline() {
+    const { lessons } = this.props;
+    const { svgProps, lineProps, circleProps: { cx, delta } } = this.props.programTimeline;
     return (
-      <Svg width="50" height={this.state.svgHeight}>
+      <Svg {...svgProps}>
         <Line {...lineProps} />
-        {this.props.lessons.map((point) => {
-          const pointYPosition = point.index * this.state.deltaOfCirclePoints;
+        {lessons.map((point) => {
+          const pointYPosition = point.index * delta;
           const key = `point-${point.subject.name}-${point.index}`;
           return (
             <ActivityCircle
               key={key}
-              activityState="inactive"
-              cx={STARTING_X_CIRCLE_POSITION}
+              cx={cx}
               cy={pointYPosition}
+              activityState="inactive"
             />
           );
         })}
@@ -47,74 +78,120 @@ class ProgramTimeline extends Component {
     );
   }
 
-  renderLesson(lesson) {
-    return (
-      <View
-        style={styles.lessonWrap}
-        key={`lesson-${lesson.subject.name}-${lesson.index}`}
-      >
-        <Text style={styles.lessonText}>
-          {lesson.subject.name}
-        </Text>
-      </View>
-    );
-  }
-
   renderProgram() {
-    const horizontalMargin = {
-      marginVertical: this.state.deltaOfCirclePoints / 2
-    };
     return (
-      <View style={[styles.programWrap, horizontalMargin]} >
+      <View style={[styles.programWrap, this.horizontalMarginStyle]} >
         {this.props.lessons.map(lesson => (
-          this.renderLesson(lesson)
+          <Lesson
+            lesson={lesson}
+            key={`lesson-${lesson.subject.name}-${lesson.index}`}
+          />
         ))}
-      </View>
-    );
-  }
-
-  renderSinglePeriod(lesson) {
-    return (
-      <View
-        style={styles.timePeriodWrap}
-        key={`lesson-${lesson.time_start}-${lesson.index}`}
-      >
-        <Text style={styles.singlePeriodText}>
-          {lesson.time_start}
-        </Text>
       </View>
     );
   }
 
   renderTimePeriods() {
     return (
-      <View style={styles.timePeriodsWrap}>
+      <View style={[styles.timePeriodsWrap, this.horizontalMarginStyle]}>
         {this.props.lessons.map(lesson => (
-          this.renderSinglePeriod(lesson)
+          <Period
+            lesson={lesson}
+            key={`lesson-${lesson.time_start}-${lesson.index}`}
+          />
         ))}
       </View>
     );
   }
 
   render() {
-    return (
-      <View
-        style={styles.programTimelineWrap}
-        onLayout={(event) => {
-          const { width, height } = event.nativeEvent.layout;
-          this.setState({
-            svgHeight: height,
-            deltaOfCirclePoints: ((height) / 8)
-          });
-        }}
-      >
-        {this.renderTimeline()}
-        {this.renderProgram()}
-        {this.renderTimePeriods()}
-      </View>
-    );
+    const { loading } = this.props;
+    return loading
+      ?
+        <View
+          style={{
+            display: 'flex',
+            flex: 1,
+            justifyContent: 'center',
+            flexDirection: 'column',
+            backgroundColor: 'white',
+            elevation: 5,
+            marginTop: -2,
+          }}
+        >
+          <ActivityIndicator size="large" color="#0000ff" />
+        </View>
+      : (
+        <View
+          style={styles.programTimelineWrap}
+          onLayout={(event) => {
+            const { height } = event.nativeEvent.layout;
+            const nRecords = this.props.lessons.length;
+              this.props.changeSVGHeight({
+                variables: {
+                  value: height,
+                  nRecords
+                }
+              });
+            }}
+        >
+          {this.renderTimeline()}
+          {this.renderProgram()}
+          {this.renderTimePeriods()}
+        </View>
+      );
   }
 }
 
+ProgramTimeline.propTypes = propTypes;
+ProgramTimeline.defaultProps = defaultProps;
 
-export default ProgramTimeline;
+const changeSVGHeight = gql`
+  mutation changeSVGHeight($value: String!, $nRecords: Number!) {
+    changeSVGHeight(value: $value, nRecords: $nRecords) @client
+  }`;
+
+
+const query = gql`
+  query {
+    lessons: today {
+      day
+      index
+      time_start
+      time_end
+      subject {
+        name
+      }
+    }
+    programTimeline @client {
+      lineProps {
+        x1
+        y1
+        x2
+        y2
+        stroke
+        strokeWidth
+      }
+      svgProps {
+        width
+        height
+      }
+      circleProps {
+        cx
+        cy
+        delta
+      }
+    }
+  }
+`;
+
+
+export default compose(
+  graphql(query, {
+    props: ({ ownProps, data }) => ({
+      ...ownProps,
+      ...data
+    })
+  }),
+  graphql(changeSVGHeight, { name: 'changeSVGHeight' }),
+)(ProgramTimeline);

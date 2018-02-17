@@ -9,25 +9,40 @@ import {
 
 import { graphql, compose } from 'react-apollo';
 import gql from 'graphql-tag';
+import SVG from 'react-native-svg-uri';
 
-import FlexView from '../../components/FlexView';
-import ProgramTimeline from '../../components/ProgramTimeline';
+import ProgramTimeline from '../../containers/ProgramTimeline';
 
 import styles from './styles.css';
 import colors from '../../colors';
 import HomeBackground from './assets/HomeBackground.png';
-import Avatar from './assets/camila_cabelo_avatar.jpg';
 
 class HomeScreen extends Component {
+  static navigationOptions() {
+    return {
+      tabBarLabel: 'Notifications',
+      tabBarIcon: ({ tintColor }) => (
+        <SVG
+          width="26"
+          height="26"
+          fill={tintColor}
+          source={require('./assets/book.svg')}
+        />
+      ),
+    };
+  }
+
   get todayWeekDay() {
     return this.props.today.length
       ? this.props.today[0].day
-      : 'Loading';
+      : 'Loading...';
   }
 
   render() {
     return (
-      <FlexView>
+      <View style={{
+        flex: 1
+      }}>
         <StatusBar backgroundColor={colors.primary.dark} barStyle="dark-content" />
         <ImageBackground
           source={HomeBackground}
@@ -40,50 +55,6 @@ class HomeScreen extends Component {
             <Text style={styles.schollHeadingText}>#npmg</Text>
           </View>
           <View style={styles.lastSchoolPost}>
-            <View style={{
-              display: 'flex',
-              flexDirection: 'row',
-              marginTop: 15,
-              marginHorizontal: 16
-            }}
-            >
-              <Image
-                style={{
-                  height: 40,
-                  width: 40,
-                  borderRadius: 22,
-                  borderWidth: 2,
-                  borderColor: colors.secondary.medium,
-                  marginRight: 6
-                }}
-                source={Avatar}
-              />
-              <View style={{
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center'
-              }}
-              >
-                <Text
-                  style={{
-                    fontSize: 20,
-                    fontFamily: 'Lato-Bold',
-                    color: colors.secondary.dark
-                  }}
-                >Camila Cabelo
-                </Text>
-                <Text style={{
-                    fontFamily: 'Lato-Bold',
-                    color: colors.secondary.light,
-                    fontSize: 12,
-                    paddingLeft: 2,
-                    marginTop: -2
-                  }}
-                >
-                    now
-                </Text>
-              </View>
-            </View>
             <View style={{
               display: 'flex',
               flex: 1,
@@ -118,7 +89,7 @@ class HomeScreen extends Component {
                 style={{
                   width: 25,
                   height: 25,
-                  marginRight: 6 
+                  marginRight: 6
                 }}
                 source={require('./assets/great.png')}
               />
@@ -136,9 +107,9 @@ class HomeScreen extends Component {
           <View style={styles.programHeadingWrap}>
             <Text style={styles.programHeadingText}>Program - 12I</Text>
           </View>
-          <ProgramTimeline lessons={this.props.today} />
+          <ProgramTimeline />
         </ImageBackground>
-      </FlexView>
+      </View>
     );
   }
 }
@@ -151,12 +122,6 @@ const query = gql`
   query {
     today {
       day
-      index
-      time_start
-      time_end
-      subject {
-        name
-      }
     }   
   }
 `;
