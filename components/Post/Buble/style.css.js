@@ -12,7 +12,7 @@ export default StyleSheet.create({
   },
   text: {
     fontSize: 16,
-    paddingVertical: 6,
+    paddingVertical: 5,
     color: colors.text.placeholder
   }
 });

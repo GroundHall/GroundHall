@@ -21,11 +21,21 @@ export const colors = {
 export default StyleSheet.create({
   feedWrap: {
     flex: 1,
+    paddingBottom: 20,
     backgroundColor: colors.primary.medium
   },
   headerWrap: {
     height: 50,
     backgroundColor: 'white',
     elevation: 1
+  },
+  createPostWrap: {
+    marginHorizontal: 8,
+    marginTop: 20,
+    marginBottom: 10
+  },
+  singlePostWrap: {
+    marginHorizontal: 8,
+    marginBottom: 10,
   }
 });

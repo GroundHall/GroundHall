@@ -17,14 +17,15 @@ export default StyleSheet.create({
   },
   postWrap: {
     marginTop: -25,
-    elevation: 3,
+    elevation: 2,
     paddingBottom: 40,
     backgroundColor: colors.primary.light,
-    borderRadius: 5
+    borderRadius: 2
   },
   headingWrap: {
-    marginHorizontal: 16,
-    marginTop: 15,
+    marginHorizontal: 14,
+    marginTop: 12,
+    marginBottom: 5,
     display: 'flex',
     flexDirection: 'row'
   },
@@ -34,7 +35,7 @@ export default StyleSheet.create({
     justifyContent: 'center'
   },
   nameText: {
-    fontSize: 20,
+    fontSize: 18,
     fontFamily: 'Lato-Bold',
     color: colors.secondary.dark
   },
@@ -42,15 +43,15 @@ export default StyleSheet.create({
     fontFamily: 'Lato-Bold',
     color: colors.secondary.medium,
     fontSize: 12,
-    paddingLeft: 2,
+    paddingLeft: 1,
     marginTop: -2
   },
   bubbleWrap: {
     marginHorizontal: 20
   },
   sendButton: {
-    width: 50,
-    height: 50,
+    width: 46,
+    height: 46,
     borderRadius: 25,
     backgroundColor: colors.secondary.dark,
     justifyContent: 'center',

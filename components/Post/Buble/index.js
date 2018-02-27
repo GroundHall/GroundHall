@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   View,
-  TextInput,
-  ScrollView
+  TextInput
 } from 'react-native';
 import SVG from 'react-native-svg-uri';
 import style from './style.css';
@@ -20,7 +19,7 @@ const Buble = ({
     <SVG
       width="50"
       height="15"
-      source={bublePoint}
+      source={require('./assets/bublePoint.svg')}
       fill={colors.primary.dark}
     />
     <View style={style.bubble}>

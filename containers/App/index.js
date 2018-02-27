@@ -6,11 +6,14 @@ import {
 
 import { ApolloProvider } from 'react-apollo';
 import { ApolloClient } from 'apollo-client';
+import { getMainDefinition } from 'apollo-utilities';
 import { HttpLink } from 'apollo-link-http';
+import { WebSocketLink } from 'apollo-link-ws';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
-import { ApolloLink } from 'apollo-link';
+import { ApolloLink, split } from 'apollo-link';
 import { withClientState } from 'apollo-link-state';
+import { setContext } from 'apollo-link-context';
 
 import { StackNavigator, TabNavigator, TabBarBottom } from 'react-navigation';
 
@@ -25,8 +28,7 @@ class App extends Component {
     super(...args);
     this.state = {
       initialRouteName: null,
-      isRouteFetched: false,
-      authToken: '',
+      isRouteFetched: false
     };
   }
 
@@ -34,23 +36,46 @@ class App extends Component {
     this.getInitialRoute();
   }
 
+  componentDidMount() {
+    this.getInitialRoute();
+  }
+
   get client() {
     const cache = new InMemoryCache();
     const stateLink = withClientState({ resolvers });
-    const httpLink = new HttpLink({ uri: 'https://5fa2ebee.ngrok.io/graphql' });
-    const middlewareAuthLink = new ApolloLink((operation, forward) => {
-      const token = this.state.authToken;
-      if (token) {
-        operation.setContext({
-          headers: {
-            authorization: token
-          }
-        });
+    const httpLink = new HttpLink({ uri: 'https://1fff3959.ngrok.io/graphql' });
+    // Create a WebSocket link:
+    const wsLink = new WebSocketLink({
+      uri: 'ws://1fff3959.ngrok.io/subscriptions',
+      options: {
+        reconnect: true
       }
-      return forward(operation);
     });
+
+    const wsHttpLink = split(
+      // split based on operation type
+      ({ query }) => {
+        const { kind, operation } = getMainDefinition(query);
+        return kind === 'OperationDefinition' && operation === 'subscription';
+      },
+      wsLink,
+      httpLink,
+    );
+
+    const authLink = setContext((_, { headers }) =>
+      // get the authentication token from local storage if it exists
+      AsyncStorage.getItem('authToken').then(token => ({
+        headers: {
+          ...headers,
+          authorization: token || '',
+        }
+      }))
+    );
+
+    const link = stateLink.concat(authLink).concat(wsHttpLink);
+
     return new ApolloClient({
-      link: ApolloLink.from([middlewareAuthLink, stateLink, httpLink]),
+      link,
       cache,
     });
   }
@@ -58,7 +83,7 @@ class App extends Component {
   getInitialRoute() {
     AsyncStorage.getItem('authToken').then((authToken) => {
       const initialRouteName = authToken ? 'Home' : 'Login';
-      this.setState({ initialRouteName, isRouteFetched: true, authToken });
+      this.setState({ initialRouteName, isRouteFetched: true });
     });
   }
 

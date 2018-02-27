@@ -66,9 +66,9 @@ class LoginScreen extends Component {
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
-  async setAuthToken(value) {
+  setAuthToken(value) {
     try {
-      await AsyncStorage.setItem('authToken', value);
+      AsyncStorage.setItem('authToken', value);
     } catch (error) {
       this.props.changeLoginField({
         variables: {
