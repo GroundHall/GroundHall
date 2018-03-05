@@ -43,10 +43,10 @@ class App extends Component {
   get client() {
     const cache = new InMemoryCache();
     const stateLink = withClientState({ resolvers });
-    const httpLink = new HttpLink({ uri: 'https://1fff3959.ngrok.io/graphql' });
+    const httpLink = new HttpLink({ uri: 'https://8dec1ef2.ngrok.io/graphql' });
     // Create a WebSocket link:
     const wsLink = new WebSocketLink({
-      uri: 'ws://1fff3959.ngrok.io/subscriptions',
+      uri: 'ws://8dec1ef2.ngrok.io/subscriptions',
       options: {
         reconnect: true
       }

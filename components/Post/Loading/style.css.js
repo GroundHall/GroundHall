@@ -26,13 +26,7 @@ export default StyleSheet.create({
     marginBottom: 14,
     marginHorizontal: 18,
     display: 'flex',
-    justifyContent: 'center',
     flexDirection: 'column',
-  },
-  text: {
-    fontSize: 16,
-    fontFamily: 'Lato-Regular',
-    color: '#263238'
   },
   bottomPostWrap: {
     paddingVertical: 12,

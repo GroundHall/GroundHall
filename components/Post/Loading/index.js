@@ -16,52 +16,50 @@ class LoadingPost extends React.Component {
 
   render() {
     return (
-      <View>
-        <View style={style.postWrap}>
-          <View style={style.headingWrap}>
-            <View style={{
+      <View style={style.postWrap}>
+        <View style={style.headingWrap}>
+          <View style={{
             width: 35,
             height: 35,
             borderRadius: 20,
             marginRight: 6,
             backgroundColor: colors.primary.dark
           }}
-            />
-            <View style={style.nameDataWrap}>
-              <LottieView
-                ref={(animation) => { this.animation1 = animation; }}
-                loop
-                style={{
+          />
+          <View style={style.nameDataWrap}>
+            <LottieView
+              ref={(animation) => { this.animation1 = animation; }}
+              loop
+              style={{
                     width: 180,
                     height: 21,
                     marginLeft: -2
                 }}
-                source={require('./assets/loadingLarge.json')}
-              />
-              <LottieView
-                ref={(animation) => { this.animation2 = animation; }}
-                loop
-                style={{
-                    width: 150,
-                    height: 16,
-                    marginLeft: -2
-                }}
-                source={require('./assets/loadingLarge.json')}
-              />
-            </View>
-          </View>
-          <View style={style.textWrap}>
+              source={require('./assets/loadingLarge.json')}
+            />
             <LottieView
-              ref={(animation) => { this.animation3 = animation; }}
+              ref={(animation) => { this.animation2 = animation; }}
               loop
               style={{
-                    width: 400,
-                    height: 41,
+                    width: 150,
+                    height: 16,
                     marginLeft: -2
                 }}
               source={require('./assets/loadingLarge.json')}
             />
           </View>
+        </View>
+        <View style={style.textWrap}>
+          <LottieView
+            ref={(animation) => { this.animation3 = animation; }}
+            loop
+            style={{
+                    width: 200,
+                    height: 30,
+                    marginLeft: -2
+                }}
+            source={require('./assets/loadingLarge.json')}
+          />
         </View>
       </View>
     );
