@@ -9,17 +9,22 @@ import style from './style.css';
 
 const Avatar = ({
   image,
+  availability,
   outerStyle
 }) => (
   image
-    ? <Image
-      style={[style.avatar, outerStyle]}
-      source={{ uri: image }}
-    />
+    ?
+      <View style={{display: 'flex', justifyContent: 'center'}}>
+        <Image
+          style={[style.avatar, outerStyle] }
+          source={{ uri: image }}
+        />
+        {availability && <View style={{width: 14, height: 14, borderRadius: 8, elevation: 3, borderColor: 'white',borderWidth: 2, backgroundColor: '#79F2C0', position: 'absolute', bottom: 12, right: 6}}/>}
+      </View>
     : <View style={{
-    width: 35,
-    height: 35,
-    borderRadius: 20,
+    width: 40,
+    height: 40,
+    borderRadius: 24,
     marginRight: 6,
     backgroundColor: colors.primary.dark
   }}

@@ -5,14 +5,15 @@ import colors from '../../../colors';
 
 export default StyleSheet.create({
   bubble: {
-    borderRadius: 20,
+    borderRadius: 24,
     backgroundColor: '#F3F3F4',
-    paddingHorizontal: 20,
+    paddingHorizontal: 16,
     justifyContent: 'center',
   },
   text: {
     fontSize: 16,
-    paddingVertical: 5,
-    color: colors.text.placeholder
+    fontFamily: 'Product Sans Regular',
+    color: colors.secondary.dark,
+    paddingVertical: 6,
   }
 });

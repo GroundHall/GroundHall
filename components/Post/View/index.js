@@ -8,18 +8,33 @@ import {
   TouchableNativeFeedback,
   Keyboard
 } from 'react-native';
+import PropTypes from 'prop-types';
 import SVG from 'react-native-svg-uri';
 
-import style from './style.css';
-import colors from '../../../colors';
+import FireSVG from './assets/fire.svg';
 import Avatar from '../Avatar';
+import style from './style.css';
 
+const propTypes = {
+  text: PropTypes.string,
+  isLiked: PropTypes.string,
+  lastName: PropTypes.string,
+  likeCount: PropTypes.number,
+  avatarURL: PropTypes.string,
+  firstName: PropTypes.string,
+  onLikeUnlikePress: PropTypes.func
+};
 
 const ViewPost = ({
-  post: { user: { id, firstName, lastName, avatarURL }, likeCount, likedBy, text },
+  text,
+  isLiked,
+  lastName,
+  likeCount,
+  avatarURL,
+  firstName,
   onLikeUnlikePress
 }) => {
-  const isLikedByCurrentUser = likedBy.map(user => user.id).includes(id);
+  const likeFillColor = isLiked ? 'rgba(233, 30, 99, 1)' : 'rgba(233, 30, 99, .5)';
   return (
     <View>
       <View style={style.postWrap}>
@@ -39,19 +54,18 @@ const ViewPost = ({
         <View style={style.bottomPostWrap}>
           <TouchableOpacity onPress={onLikeUnlikePress}>
             <View style={[style.row, { alignSelf: 'flex-start' }]}>
-              <View style={{
-                paddingTop: 2
-              }}
-              >
+              <View style={{ paddingTop: 2 }}>
                 <SVG
                   width="18"
                   height="18"
-                  source={require('./assets/fire.svg')}
-                  fill="rgba(233, 30, 99, .6)"
+                  source={FireSVG}
+                  fill={likeFillColor}
                 />
               </View>
               <View style={style.likeTextWrap}>
-                <Text style={style.likeText}>Like</Text>
+                <Text style={[style.likeText, { color: likeFillColor }]}>
+                  { isLiked ? 'Liked' : 'Like' }
+                </Text>
               </View>
             </View>
           </TouchableOpacity>

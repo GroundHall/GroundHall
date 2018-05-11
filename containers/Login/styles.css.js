@@ -12,15 +12,15 @@ export default StyleSheet.create({
     marginBottom: 30
   },
   title: {
-    fontFamily: 'Lato-Black',
-    fontSize: 26,
+    fontFamily: 'Product Sans Bold',
+    fontSize: 28,
     color: colors.secondary.dark
   },
   buttonWrap: {
     flexDirection: 'row',
     justifyContent: 'flex-end',
     marginRight: 40,
-    marginTop: -25
+    marginTop: -25,
   },
   inputWrap: {
     backgroundColor: colors.primary.light,

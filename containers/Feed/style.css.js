@@ -1,41 +1,39 @@
 
 import { StyleSheet } from 'react-native';
 
-export const colors = {
-  primary: {
-    light: 'white',
-    medium: '#FBFBFB',
-    dark: ''
-  },
-  secondary: {
-    light: '#C8E3FA',
-    medium: '#49A2ED',
-    dark: '#152346'
-  },
-  text: {
-    dark: '#253450'
-  }
-};
+import colors from '../../colors';
 
 
 export default StyleSheet.create({
   feedWrap: {
     flex: 1,
     paddingBottom: 20,
-    backgroundColor: colors.primary.medium
+    backgroundColor: '#FAFBFC'
   },
   headerWrap: {
-    height: 50,
     backgroundColor: 'white',
-    elevation: 1
+    elevation: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    paddingLeft: 24,
+    paddingVertical: 16,
+    marginBottom: 16
+  },
+  headingText: {
+    fontSize: 26,
+    marginLeft: 24,
+    marginTop: 24,
+    marginBottom: 16,
+    fontFamily: 'Product Sans Regular',
+    color: colors.secondary.dark
   },
   createPostWrap: {
-    marginHorizontal: 8,
-    marginTop: 20,
-    marginBottom: 10
+    marginBottom: 8,
+    marginHorizontal: 8
   },
   singlePostWrap: {
-    marginHorizontal: 8,
-    marginBottom: 10,
+    marginBottom: 8,
+    marginHorizontal: 8
   }
 });

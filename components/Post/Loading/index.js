@@ -8,7 +8,13 @@ import colors from '../../../colors';
 import style from './style.css';
 
 class LoadingPost extends React.Component {
-  componentDidMount() {
+
+  constructor(props) {
+    super(props);
+    this.onLottieLoad = this.onLottieLoad.bind(this);
+  }
+
+  onLottieLoad() {
     this.animation1.play();
     this.animation2.play();
     this.animation3.play();
@@ -28,6 +34,7 @@ class LoadingPost extends React.Component {
           />
           <View style={style.nameDataWrap}>
             <LottieView
+              onLayout={this.onLottieLoad}
               ref={(animation) => { this.animation1 = animation; }}
               loop
               style={{

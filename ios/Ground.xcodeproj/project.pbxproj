@@ -61,6 +61,21 @@
 		5D2179CA8CF44DBBA6D11EE0 /* libRNSVG.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 844131BB835144C1B81427A9 /* libRNSVG.a */; };
 		0149E2AA61E64EC18FA754A7 /* libRNSVG-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D904663CA9C44EA284C780F3 /* libRNSVG-tvOS.a */; };
 		D31EC7A72B3149CF9F466893 /* libLottieReactNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D4AA556262A4B778255C5C7 /* libLottieReactNative.a */; };
+		275CBC35BA7940AE992A2018 /* libAutoGrowTextInput.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2BD081943A44FC29DDA77C9 /* libAutoGrowTextInput.a */; };
+		E487F3B3B6AA47E39A1F0BF3 /* Product Sans Bold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C6FD24D646741AB86103831 /* Product Sans Bold Italic.ttf */; };
+		15B0D193062048B9B841BFBB /* Product Sans Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9B176C85E9441B49FDA9248 /* Product Sans Bold.ttf */; };
+		75196F2B44C54C55A8721A51 /* Product Sans Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C72EE1ABA7AE4907BEAB6918 /* Product Sans Italic.ttf */; };
+		30193BBAFFFE40A2A9DB554D /* Product Sans Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B6DC4CEA3B4F4A4D847EDEDB /* Product Sans Regular.ttf */; };
+		59BD885A13154B199880D6B9 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 229C1AD3B8974AF586DC5FC3 /* OpenSans-Bold.ttf */; };
+		454171DE3C0D4BD8898DB517 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 018F7A42FDAE4481AAE914DD /* OpenSans-BoldItalic.ttf */; };
+		4DB003E9A26B4A31887210B2 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 105A4536795040D79BEDD08B /* OpenSans-ExtraBold.ttf */; };
+		B8FCC81D4985442D8CF7DFAB /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D7C7975F18B24546A02D1F43 /* OpenSans-ExtraBoldItalic.ttf */; };
+		A3EFE0C131F74DE799D46504 /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE597C6EF7754DDD97907CDD /* OpenSans-Italic.ttf */; };
+		5C9D85F8F9E14939B0743689 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6DA17949A5454D5EB3094699 /* OpenSans-Light.ttf */; };
+		411895B5E66145A993B1FB64 /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2334FA6D1F7A42C8B1F0B46F /* OpenSans-LightItalic.ttf */; };
+		3D30081864AF4CE3AF7E1DF2 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B694379FB2984A80BD412396 /* OpenSans-Regular.ttf */; };
+		3E38557C981D45FB81AB30B8 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F6DAC597F1E84090A6ECDD2C /* OpenSans-SemiBold.ttf */; };
+		ECD84D1E2D8C4BA289FCE55D /* OpenSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D670DE37CAA1487694434957 /* OpenSans-SemiBoldItalic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -316,6 +331,22 @@
 		D904663CA9C44EA284C780F3 /* libRNSVG-tvOS.a */ = {isa = PBXFileReference; name = "libRNSVG-tvOS.a"; path = "libRNSVG-tvOS.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		F8B7B1C8B30C4DFC83230C5A /* LottieReactNative.xcodeproj */ = {isa = PBXFileReference; name = "LottieReactNative.xcodeproj"; path = "../node_modules/lottie-react-native/src/ios/LottieReactNative.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		4D4AA556262A4B778255C5C7 /* libLottieReactNative.a */ = {isa = PBXFileReference; name = "libLottieReactNative.a"; path = "libLottieReactNative.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		DEF6DE2FBD254219BA5620FA /* AutoGrowTextInput.xcodeproj */ = {isa = PBXFileReference; name = "AutoGrowTextInput.xcodeproj"; path = "../node_modules/react-native-autogrow-textinput/ios/AutoGrowTextInput.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		D2BD081943A44FC29DDA77C9 /* libAutoGrowTextInput.a */ = {isa = PBXFileReference; name = "libAutoGrowTextInput.a"; path = "libAutoGrowTextInput.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		1C6FD24D646741AB86103831 /* Product Sans Bold Italic.ttf */ = {isa = PBXFileReference; name = "Product Sans Bold Italic.ttf"; path = "../assets/fonts/Product Sans Bold Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C9B176C85E9441B49FDA9248 /* Product Sans Bold.ttf */ = {isa = PBXFileReference; name = "Product Sans Bold.ttf"; path = "../assets/fonts/Product Sans Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C72EE1ABA7AE4907BEAB6918 /* Product Sans Italic.ttf */ = {isa = PBXFileReference; name = "Product Sans Italic.ttf"; path = "../assets/fonts/Product Sans Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B6DC4CEA3B4F4A4D847EDEDB /* Product Sans Regular.ttf */ = {isa = PBXFileReference; name = "Product Sans Regular.ttf"; path = "../assets/fonts/Product Sans Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		229C1AD3B8974AF586DC5FC3 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; name = "OpenSans-Bold.ttf"; path = "../assets/fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		018F7A42FDAE4481AAE914DD /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; name = "OpenSans-BoldItalic.ttf"; path = "../assets/fonts/OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		105A4536795040D79BEDD08B /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; name = "OpenSans-ExtraBold.ttf"; path = "../assets/fonts/OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D7C7975F18B24546A02D1F43 /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; name = "OpenSans-ExtraBoldItalic.ttf"; path = "../assets/fonts/OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FE597C6EF7754DDD97907CDD /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; name = "OpenSans-Italic.ttf"; path = "../assets/fonts/OpenSans-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6DA17949A5454D5EB3094699 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; name = "OpenSans-Light.ttf"; path = "../assets/fonts/OpenSans-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2334FA6D1F7A42C8B1F0B46F /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; name = "OpenSans-LightItalic.ttf"; path = "../assets/fonts/OpenSans-LightItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B694379FB2984A80BD412396 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; name = "OpenSans-Regular.ttf"; path = "../assets/fonts/OpenSans-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F6DAC597F1E84090A6ECDD2C /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; name = "OpenSans-SemiBold.ttf"; path = "../assets/fonts/OpenSans-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D670DE37CAA1487694434957 /* OpenSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; name = "OpenSans-SemiBoldItalic.ttf"; path = "../assets/fonts/OpenSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -348,6 +379,7 @@
 				5D2179CA8CF44DBBA6D11EE0 /* libRNSVG.a in Frameworks */,
 				0149E2AA61E64EC18FA754A7 /* libRNSVG-tvOS.a in Frameworks */,
 				D31EC7A72B3149CF9F466893 /* libLottieReactNative.a in Frameworks */,
+				275CBC35BA7940AE992A2018 /* libAutoGrowTextInput.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,6 +551,7 @@
 				0D5C99C2057742A39F2DE795 /* RNVectorIcons.xcodeproj */,
 				65370EA350794054B0940A17 /* RNSVG.xcodeproj */,
 				F8B7B1C8B30C4DFC83230C5A /* LottieReactNative.xcodeproj */,
+				DEF6DE2FBD254219BA5620FA /* AutoGrowTextInput.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -589,6 +622,20 @@
 				BC1B8DD2B9764D27AF493C18 /* Octicons.ttf */,
 				949C50500A054D9489331AD1 /* SimpleLineIcons.ttf */,
 				4C59E31FEA724902A99B9768 /* Zocial.ttf */,
+				1C6FD24D646741AB86103831 /* Product Sans Bold Italic.ttf */,
+				C9B176C85E9441B49FDA9248 /* Product Sans Bold.ttf */,
+				C72EE1ABA7AE4907BEAB6918 /* Product Sans Italic.ttf */,
+				B6DC4CEA3B4F4A4D847EDEDB /* Product Sans Regular.ttf */,
+				229C1AD3B8974AF586DC5FC3 /* OpenSans-Bold.ttf */,
+				018F7A42FDAE4481AAE914DD /* OpenSans-BoldItalic.ttf */,
+				105A4536795040D79BEDD08B /* OpenSans-ExtraBold.ttf */,
+				D7C7975F18B24546A02D1F43 /* OpenSans-ExtraBoldItalic.ttf */,
+				FE597C6EF7754DDD97907CDD /* OpenSans-Italic.ttf */,
+				6DA17949A5454D5EB3094699 /* OpenSans-Light.ttf */,
+				2334FA6D1F7A42C8B1F0B46F /* OpenSans-LightItalic.ttf */,
+				B694379FB2984A80BD412396 /* OpenSans-Regular.ttf */,
+				F6DAC597F1E84090A6ECDD2C /* OpenSans-SemiBold.ttf */,
+				D670DE37CAA1487694434957 /* OpenSans-SemiBoldItalic.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -984,6 +1031,20 @@
 				9AAC288418B64DE2A8E56422 /* Octicons.ttf in Resources */,
 				B837A97120E04D5BAC0341B8 /* SimpleLineIcons.ttf in Resources */,
 				23372B0A7143497781079FE5 /* Zocial.ttf in Resources */,
+				E487F3B3B6AA47E39A1F0BF3 /* Product Sans Bold Italic.ttf in Resources */,
+				15B0D193062048B9B841BFBB /* Product Sans Bold.ttf in Resources */,
+				75196F2B44C54C55A8721A51 /* Product Sans Italic.ttf in Resources */,
+				30193BBAFFFE40A2A9DB554D /* Product Sans Regular.ttf in Resources */,
+				59BD885A13154B199880D6B9 /* OpenSans-Bold.ttf in Resources */,
+				454171DE3C0D4BD8898DB517 /* OpenSans-BoldItalic.ttf in Resources */,
+				4DB003E9A26B4A31887210B2 /* OpenSans-ExtraBold.ttf in Resources */,
+				B8FCC81D4985442D8CF7DFAB /* OpenSans-ExtraBoldItalic.ttf in Resources */,
+				A3EFE0C131F74DE799D46504 /* OpenSans-Italic.ttf in Resources */,
+				5C9D85F8F9E14939B0743689 /* OpenSans-Light.ttf in Resources */,
+				411895B5E66145A993B1FB64 /* OpenSans-LightItalic.ttf in Resources */,
+				3D30081864AF4CE3AF7E1DF2 /* OpenSans-Regular.ttf in Resources */,
+				3E38557C981D45FB81AB30B8 /* OpenSans-SemiBold.ttf in Resources */,
+				ECD84D1E2D8C4BA289FCE55D /* OpenSans-SemiBoldItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1118,12 +1179,14 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
 					"$(SRCROOT)\..\node_modules\react-native-svg\ios/**",
 					"$(SRCROOT)\..\node_modules\lottie-react-native\src\ios\LottieReactNative",
+					"$(SRCROOT)\..\node_modules\react-native-autogrow-textinput\ios",
 				);
 			};
 			name = Debug;
@@ -1145,12 +1208,14 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
 					"$(SRCROOT)\..\node_modules\react-native-svg\ios/**",
 					"$(SRCROOT)\..\node_modules\lottie-react-native\src\ios\LottieReactNative",
+					"$(SRCROOT)\..\node_modules\react-native-autogrow-textinput\ios",
 				);
 			};
 			name = Release;
@@ -1175,6 +1240,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
 					"$(SRCROOT)\..\node_modules\react-native-svg\ios/**",
 					"$(SRCROOT)\..\node_modules\lottie-react-native\src\ios\LottieReactNative",
+					"$(SRCROOT)\..\node_modules\react-native-autogrow-textinput\ios",
 				);
 			};
 			name = Debug;
@@ -1198,6 +1264,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
 					"$(SRCROOT)\..\node_modules\react-native-svg\ios/**",
 					"$(SRCROOT)\..\node_modules\lottie-react-native\src\ios\LottieReactNative",
+					"$(SRCROOT)\..\node_modules\react-native-autogrow-textinput\ios",
 				);
 			};
 			name = Release;
@@ -1228,12 +1295,14 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
 					"$(SRCROOT)\..\node_modules\react-native-svg\ios/**",
 					"$(SRCROOT)\..\node_modules\lottie-react-native\src\ios\LottieReactNative",
+					"$(SRCROOT)\..\node_modules\react-native-autogrow-textinput\ios",
 				);
 			};
 			name = Debug;
@@ -1264,12 +1333,14 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
 					"$(SRCROOT)\..\node_modules\react-native-svg\ios/**",
 					"$(SRCROOT)\..\node_modules\lottie-react-native\src\ios\LottieReactNative",
+					"$(SRCROOT)\..\node_modules\react-native-autogrow-textinput\ios",
 				);
 			};
 			name = Release;
@@ -1295,6 +1366,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Debug;
@@ -1319,6 +1391,7 @@
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};

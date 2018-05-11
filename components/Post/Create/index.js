@@ -12,7 +12,6 @@ import Ripple from 'react-native-material-ripple';
 import LottieView from 'lottie-react-native';
 
 import style, { colors } from './style.css';
-import image from '../../../containers/HomeScreen/assets/camila_cabelo_avatar.jpg';
 import send from './assets/send.svg';
 
 import Avatar from '../Avatar';
@@ -35,7 +34,12 @@ const defaultProps = {
 };
 
 class CreatePost extends React.Component {
-  componentDidMount() {
+  constructor(props) {
+    super(props);
+    this.onLottieLoad = this.onLottieLoad.bind(this);
+  }
+
+  onLottieLoad() {
     this.animation.play();
   }
 
@@ -46,6 +50,7 @@ class CreatePost extends React.Component {
     }
     return (
       <LottieView
+        onLayout={this.onLottieLoad}
         ref={(animation) => { this.animation = animation; }}
         loop
         style={{
@@ -59,25 +64,25 @@ class CreatePost extends React.Component {
   }
 
   render() {
-    const { me: { firstName, lastName, avatarURL }, onCreate } = this.props;
+    const { me: { firstName, lastName, avatarURL }, onCreate, text } = this.props;
     return (
       <View>
         <View style={style.tagWrap}>
-          <Text style={style.tagText}>Boyana</Text>
+          <Text style={style.tagText}>{`@${firstName} ${lastName}`}</Text>
         </View>
         <View style={style.postWrap}>
           <View style={style.headingWrap}>
             <Avatar image={avatarURL} />
             <View style={style.nameDataWrap}>
               {this.renderName()}
-              <Text style={style.dateText}>now</Text>
+              <Text style={style.dateText}>@chrispcode, Admin</Text>
             </View>
           </View>
           <View style={style.bubbleWrap}>
-            <Buble />
+            <Buble text={text} onChange={this.props.onChange} />
           </View>
         </View>
-        <View style={style.sendButtonWrap}>
+        <View>
           <Ripple
             style={style.sendButton}
             rippleContainerBorderRadius={25}

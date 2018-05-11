@@ -6,8 +6,8 @@ export default {
   },
   secondary: {
     light: '#C8E3FA',
-    medium: '#49A2ED',
-    dark: '#152346'
+    medium: '#0747A6',
+    dark: '#172B4D'
   },
   text: {
     dark: '#253450',

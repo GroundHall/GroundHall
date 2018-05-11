@@ -94,12 +94,15 @@ class LoginScreen extends Component {
     const { email, password } = this.props.login;
     this.props.toggleLoading();
     if (email && password) {
+      debugger;
       this.props.authenticate({ variables: { email, password } })
         .then((result) => {
+          debugger;
           this.props.toggleLoading();
           this.setAuthToken(result.data.authenticate);
           this.props.navigation.dispatch(resetAction);
         }).catch((error) => {
+          debugger;
           const errorMessage = error.graphQLErrors[0].message;
           this.props.changeLoginField({
             variables: {
@@ -175,10 +178,10 @@ class LoginScreen extends Component {
               <View style={styles.buttonWrap}>
                 <NextCircle onPressIn={this.handleSummit} loading={loading} />
               </View>
-              <View style={styles.orRegisterWrap}>
+              {/* <View style={styles.orRegisterWrap}>
                 <Text style={styles.orWrap}>or</Text>
                 <Text style={styles.registerText}>Register</Text>
-              </View>
+              </View> */}
             </KeyboardAvoidingView>
           </ImageBackground>
         </View>

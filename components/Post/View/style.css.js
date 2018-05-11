@@ -21,11 +21,11 @@ export default StyleSheet.create({
     borderRadius: 2
   },
   headingWrap: {
-    marginHorizontal: 14,
-    marginTop: 12,
+    marginHorizontal: 16,
+    marginTop: 16,
+    marginBottom: 8,
     display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center'
+    flexDirection: 'row'
   },
   nameDataWrap: {
     display: 'flex',
@@ -33,26 +33,25 @@ export default StyleSheet.create({
     justifyContent: 'center'
   },
   nameText: {
-    fontSize: 18,
-    fontFamily: 'Lato-Bold',
+    fontSize: 16,
+    fontFamily: 'OpenSans-SemiBold',
     color: colors.secondary.dark
   },
   dateText: {
-    fontFamily: 'Lato-Bold',
+    fontFamily: 'OpenSans-Regular',
     color: colors.secondary.medium,
-    fontSize: 12,
-    paddingLeft: 1,
-    marginTop: -2
+    fontSize: 14,
+    marginTop: -4
   },
   textWrap: {
-    marginTop: 13,
-    marginBottom: 14,
-    marginHorizontal: 18
+    marginTop: 16,
+    marginBottom: 24,
+    marginHorizontal: 24
   },
   text: {
     fontSize: 16,
-    fontFamily: 'Lato-Regular',
-    color: '#263238'
+    fontFamily: 'Product Sans Regular',
+    color: colors.secondary.dark
   },
   likeBubbleWrap: {
     alignSelf: 'flex-start',
@@ -61,8 +60,7 @@ export default StyleSheet.create({
     borderRadius: 20,
     borderWidth: 2,
     paddingHorizontal: 6,
-    paddingVertical: 1,
-    marginBottom: -13,
+    marginBottom: -11,
     zIndex: 5,
     marginLeft: 32
   },

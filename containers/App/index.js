@@ -16,12 +16,15 @@ import { withClientState } from 'apollo-link-state';
 import { setContext } from 'apollo-link-context';
 
 import { StackNavigator, TabNavigator, TabBarBottom } from 'react-navigation';
+import BottomNavigation from './BottomNavigation';
 
 import resolvers from './resolvers';
 import Login from '../Login';
 // import HomeScreen from '../HomeScreen';
 import FeedScreen from '../Feed';
-
+import ProgramScreen from '../Program';
+import Chat from '../Chat';
+import ChatSelectScreen from '../ChatSelect';
 
 class App extends Component {
   constructor(...args) {
@@ -30,23 +33,20 @@ class App extends Component {
       initialRouteName: null,
       isRouteFetched: false
     };
+    // AsyncStorage.removeItem('authToken');
   }
 
   componentWillMount() {
     this.getInitialRoute();
   }
 
-  componentDidMount() {
-    this.getInitialRoute();
-  }
-
   get client() {
     const cache = new InMemoryCache();
     const stateLink = withClientState({ resolvers });
-    const httpLink = new HttpLink({ uri: 'https://8dec1ef2.ngrok.io/graphql' });
+    const httpLink = new HttpLink({ uri: 'http://172.16.24.109/graphql' });
     // Create a WebSocket link:
     const wsLink = new WebSocketLink({
-      uri: 'ws://8dec1ef2.ngrok.io/subscriptions',
+      uri: 'ws://172.16.24.109/subscriptions',
       options: {
         reconnect: true
       }
@@ -72,10 +72,8 @@ class App extends Component {
       }))
     );
 
-    const link = stateLink.concat(authLink).concat(wsHttpLink);
-
     return new ApolloClient({
-      link,
+      link: ApolloLink.from([stateLink, authLink, wsHttpLink]),
       cache,
     });
   }
@@ -92,22 +90,30 @@ class App extends Component {
       Login: { screen: Login },
       Home: {
         screen: TabNavigator({
+          ChatSelect: {
+            screen: ChatSelectScreen
+          },
           Feed: {
             screen: FeedScreen,
           },
+          TimeLine: {
+            screen: ProgramScreen
+          }
         }, {
-          tabBarComponent: TabBarBottom,
+          tabBarComponent: BottomNavigation,
           tabBarPosition: 'bottom',
           animationEnabled: true,
+          initialRouteName: 'ChatSelect',
           tabBarOptions: {
             showLabel: false,
-            activeTintColor: '#152346',
+            activeTintColor: '#FF467E',
             style: {
               backgroundColor: 'white',
             },
           },
         })
       },
+      Chat: { screen: Chat }
     }, { headerMode: 'none', initialRouteName: this.state.initialRouteName });
     return <Navigator />;
   }

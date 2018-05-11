@@ -20,7 +20,7 @@ const defaultProps = {
 };
 
 const Buble = ({
-  onChangeText,
+  onChange,
   text
 }) => (
   <View style={{
@@ -35,9 +35,9 @@ const Buble = ({
     <View style={style.bubble}>
       <TextInput
         style={style.text}
-        onChangeText={onChangeText}
-        value={text}
+        onChangeText={onChange}
         multiline
+        value={text}
         underlineColorAndroid="rgba(0,0,0,0)"
         selectionColor={colors.secondary.medium}
         placeholder="What do you have to say?"

@@ -5,55 +5,58 @@ import colors from '../../../colors';
 
 export default StyleSheet.create({
   tagWrap: {
-    backgroundColor: colors.secondary.dark,
+    backgroundColor: colors.secondary.medium,
     alignSelf: 'flex-start',
-    padding: 10,
-    borderRadius: 5,
-    marginLeft: 10
+    paddingBottom: 14,
+    paddingHorizontal: 16,
+    paddingTop: 8,
+    borderRadius: 3,
+    marginLeft: 16,
   },
   tagText: {
     alignSelf: 'flex-start',
-    color: colors.primary.light
+    color: colors.primary.light,
+    fontFamily: 'Product Sans Regular',
+    fontSize: 15
   },
   postWrap: {
-    marginTop: -25,
+    marginTop: -8,
     elevation: 2,
     paddingBottom: 40,
     backgroundColor: colors.primary.light,
     borderRadius: 2
   },
   headingWrap: {
-    marginHorizontal: 14,
-    marginTop: 12,
-    marginBottom: 5,
+    marginHorizontal: 16,
+    marginTop: 16,
+    marginBottom: 8,
     display: 'flex',
     flexDirection: 'row'
   },
   nameDataWrap: {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   nameText: {
-    fontSize: 18,
-    fontFamily: 'Lato-Bold',
+    fontSize: 16,
+    fontFamily: 'OpenSans-SemiBold',
     color: colors.secondary.dark
   },
   dateText: {
-    fontFamily: 'Lato-Bold',
+    fontFamily: 'OpenSans-Regular',
     color: colors.secondary.medium,
-    fontSize: 12,
-    paddingLeft: 1,
-    marginTop: -2
+    fontSize: 14,
+    marginTop: -4
   },
   bubbleWrap: {
-    marginHorizontal: 20
+    marginHorizontal: 24
   },
   sendButton: {
-    width: 46,
-    height: 46,
-    borderRadius: 25,
-    backgroundColor: colors.secondary.dark,
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+    backgroundColor: colors.secondary.medium,
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: -25,
